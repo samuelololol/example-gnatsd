@@ -1,5 +1,7 @@
 gnatsd:
     image: apcera/gnatsd
+    ports:
+        - "8222:8222"
 
 stone:
     image: aanand/wait
