@@ -1,0 +1,4 @@
+FROM python:2.7-onbuild
+MAINTAINER samuelololol <samuelololol@gmail.com>
+#RUN pip install https://github.com/nats-io/gnatsd/archive/master.zip
+CMD ["python", "subscriber.py"]

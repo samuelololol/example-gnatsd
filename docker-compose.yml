@@ -1,0 +1,23 @@
+gnatsd:
+    image: apcera/gnatsd
+
+stone:
+    image: aanand/wait
+    links:
+        - gnatsd
+
+pynatss:
+    build: .
+    dockerfile: Dockerfile-sub
+    links:
+        - gnatsd
+        - stone
+
+pynatsp:
+    build: .
+    dockerfile: Dockerfile-pub
+    links:
+        - gnatsd
+        - pynatss
+
+
