@@ -6,18 +6,27 @@ stone:
     links:
         - gnatsd
 
-pynatss:
+pynatss1:
     build: .
     dockerfile: Dockerfile-sub
     links:
         - gnatsd
         - stone
 
+pynatss2:
+    build: .
+    dockerfile: Dockerfile-sub
+    links:
+        - gnatsd
+        - stone
+        - pynatss1
+
 pynatsp:
     build: .
     dockerfile: Dockerfile-pub
     links:
         - gnatsd
-        - pynatss
+        - pynatss1
+        - pynatss2
 
 
